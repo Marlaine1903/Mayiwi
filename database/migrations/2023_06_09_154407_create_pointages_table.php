@@ -12,23 +12,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pointages', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->string('motdepasse');
-            $table->boolean('admin');
-            $table->boolean('actif');
+            $table->string('heure');
+            $table->date('date');
             $table->foreignIdFor(Personnels::class);
             $table->timestamps();
-            
         });
-}
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pointages');
     }
 };

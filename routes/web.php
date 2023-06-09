@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/post', function () {           
+
+    return post::all();
+
+
+    //return view('welcome');
 });
+
+route::get('/bon', function(){
+return 'bonjour';
+});
+
